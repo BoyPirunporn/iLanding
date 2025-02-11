@@ -26,7 +26,7 @@ export default {
         primary: "var(--font-nunito), sans-serif"
       },
       colors: {
-        primary: '#1c1c22',
+        primary: '#2d465e',
         accent: {
           DEFAULT: '#0d83fd',
           hover: '#00e187'

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -17,6 +17,24 @@ const images = [
     "/assets/client-8.png",
 ]
 const Client = () => {
+    const [slidePerView, setSlidePerView] = useState(6);
+
+    useEffect(() => {
+        const handleSize = () => {
+            if (window.innerWidth < 768) {
+                setSlidePerView(2);
+            } else {
+                setSlidePerView(6);
+            }
+        };
+
+        handleSize(); // เรียกใช้งานครั้งแรกตอนโหลดหน้า
+        window.addEventListener("resize", handleSize);
+
+        return () => {
+            window.removeEventListener("resize", handleSize);
+        };
+    }, []);
     return (
         <section id='client' className='container mx-auto p-[60px_0]'>
             <Swiper modules={[Autoplay, Pagination, Navigation]}
@@ -26,10 +44,10 @@ const Client = () => {
                 }}
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
                 spaceBetween={50}
-                slidesPerView={6}>
+                slidesPerView={slidePerView}>
                 {images.map((src, index) => (
-                    <SwiperSlide key={index}>
-                        <div className="w-[116px] h-[40px]  cursor-pointer">
+                    <SwiperSlide key={index} className='cursor-pointer'>
+                        <div className="w-[116px] h-[40px]  ">
                             <Image
                                 src={src}
                                 alt=''

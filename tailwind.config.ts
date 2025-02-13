@@ -13,16 +13,18 @@ export default {
     },
     screens: {
       xs: "374px",
-      sm: "640px",
+      sm: "576px",
       md: "768px",
-      lg: "960px",
+      lg: "992px",
       xl: "1200px",
+      '2xl': '1400px',
     },
     extend: {
       content: {
         'checkmark': "\f26a"
       },
       fontFamily: {
+        nunito:["'Nunito Sans'","sans-serif"],
         primary: "var(--font-nunito), sans-serif"
       },
       colors: {
@@ -33,6 +35,10 @@ export default {
         },
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      rotate: {
+        '15': '15deg',
+        '-10': '-10deg'
       },
       keyframes: {
         'shaps-float': {

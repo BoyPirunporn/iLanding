@@ -6,9 +6,9 @@ const Praesenti = () => {
     return (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: .1, duration: .3, ease: "easeIn" } }} >
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 items-center ">
-                <div className='flex flex-col'>
+                <div className='order-2 md:order-none flex flex-col'>
                     <h1 className='mb-[20px] pb-[20px]  text-3xl font-[500] relative after:w-[100px] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-[3px] after:bg-accent after:content-[""] '>
-                        Voluptatem dignissimos provident
+                        Neque exercitationem debitis
                     </h1>
                     <p className="text-[16px] text-primary/80 font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vel necessitatibus ut fuga minus dolorem qui corrupti eius omnis rem!</p>
 
@@ -25,7 +25,7 @@ const Praesenti = () => {
                         ))}
                     </ul>
                 </div>
-                <div className='w-full h-[435px] relative'>
+                <div className='order-1 md:order-none w-full h-[200px] md:h-[435px] relative'>
                     <Image
                         src={"/assets/features/features-illustration-2.webp"}
                         alt=''

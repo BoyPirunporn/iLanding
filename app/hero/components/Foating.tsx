@@ -33,7 +33,7 @@ const Foating = () => {
                     repeatType: "loop",
                     ease: "easeInOut"
                 }}
-                className="absolute bottom-[10px] right-[30px] max-w-[300px] rounded-xl py-2 px-5 bg-white text-primary/60 flex flex-col gap-2" >
+                className="md:absolute bottom-[10px] right-[90px] max-w-[300px] rounded-xl py-2 px-5 bg-white text-primary/60 flex flex-col gap-2" >
                 <div className="flex flex-row relative">
                     {avatars.map((avatar, index) => {
 

@@ -1,19 +1,22 @@
 'use client'
-import { Link } from 'react-scroll'
+import { Link as LinkReactScroll } from 'react-scroll'
 import React, { useState } from 'react'
 import { Button } from '../ui/button'
 import MobileNav from './MobileNav'
 import { motion, AnimatePresence, Variants } from 'framer-motion'
 
-
-export const links = [
-    { title: "Home", id: "#hero" },
-    { title: "About", id: "#about" },
-    { title: "Feature", id: "#feature" },
-    { title: "Service", id: "#service" },
-    { title: "Pricing", id: "#pricing" },
-    { title: "Dropdown", id: "" },
-    { title: "Contact", id: "#contact" },
+interface ILinkMenu {
+    title: string;
+    id: string;
+}
+export const links: ILinkMenu[] = [
+    { title: "Home", id: "hero", },
+    { title: "About", id: "about", },
+    { title: "Feature", id: "feature", },
+    { title: "Service", id: "service", },
+    { title: "Pricing", id: "pricing", },
+    // { title: "Dropdown", id: "", link: false },
+    { title: "Contact", id: "contact", },
 ]
 
 const variants: Variants = {
@@ -27,10 +30,9 @@ const variants: Variants = {
     closed: {
         clipPath: "circle(0 at 88% 50px)",
         transition: {
-            delay: .2,
-            type: "spring",
-            stiffness: 400,
-            damping: 10
+            // type: "spring",
+            // stiffness: 500,
+            // damping: 10
         }
     }
 }
@@ -39,12 +41,12 @@ const Header = () => {
     return (
         <header className='py-5 xl:py-8 fixed top-0 left-0 right-0 z-10'>
             <div className='container max-auto flex justify-between  bg-white items-center rounded-full py-3'>
-                <div className='text-xl'>iLanding</div>
+                <div className='text-xl md:text-3xl font-[400] text-primary'>iLanding</div>
                 <nav className="hidden xl:block">
-                    <ul className='flex flex-row gap-5 text-md '>
+                    <ul className='flex items-center flex-row gap-5 text-md '>
                         {links.map((link, index) => (
-                            <li key={index} >
-                                <Link to={link.id} smooth duration={100} offset={-100} className='cursor-pointer' >{link.title}</Link>
+                            <li key={index} className='hover:text-accent cursor-pointer' >
+                                <LinkReactScroll to={link.id!} smooth activeClass='text-accent' duration={300} offset={-80} spy={true} className='text-lg ' >{link.title}</LinkReactScroll>
                             </li>
                         ))}
                     </ul>
@@ -63,7 +65,7 @@ const Header = () => {
                                 closed: { opacity: 1 },
                                 open: { opacity: 0 },
                             }} strokeLinecap="round" />
-                            <motion.path strokeWidth="3" stroke="black" strokeLinecap="round"
+                            <motion.path strokeWidth="3"  stroke="black" strokeLinecap="round"
                                 variants={{
                                     closed: { d: "M 2 16.346 L 20 16.346" },
                                     open: { d: "M 3 2.5 L 17 16.346" },
@@ -71,15 +73,15 @@ const Header = () => {
                             />
                         </svg>
                     </button>
-                    {/* <AnimatePresence mode='wait'>
+                    <AnimatePresence mode='wait'>
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{
                                 opacity: 1
                             }}>
-                            <MobileNav open={open} variants={variants} />
+                            <MobileNav open={open} variants={variants} onClick={() => setOpen(false)}/>
                         </motion.div>
-                    </AnimatePresence> */}
+                    </AnimatePresence>
                 </motion.div>
             </div>
         </header>

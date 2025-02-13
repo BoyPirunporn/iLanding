@@ -11,7 +11,7 @@ const AboutFoating = () => {
                 repeatType: "loop", // ให้วนซ้ำแบบ loop
                 ease: "easeInOut" // ทำให้การเคลื่อนไหวเนียนขึ้น
             }}
-            className="text-white w-[200px] md:min-w-[200px] bg-accent md:absolute  bottom-[5%] right-[5%] rounded-xl text-center p-[1.5rem]">
+            className="text-white w-full md:w-[250px] bg-accent md:absolute  bottom-[5%] right-[5%] rounded-xl text-center p-[1.5rem]">
             <p className=" flex flex-row gap-2 items-center justify-center">
                 <span className="text-5xl">15+</span>
                 <span className="text-sm">Years</span>

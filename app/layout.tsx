@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
+import Footer from "@/components/footer";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -12,7 +13,7 @@ const roboto = Roboto({
 
 const nunito = Nunito_Sans({
   subsets: ["latin",],
-  style:["italic","normal"],
+  style: ["italic", "normal"],
   weight: ["200", "300", "400", "500", "600", "700", "800", "900", "1000"],
   variable: "--font-nunito"
 
@@ -36,6 +37,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

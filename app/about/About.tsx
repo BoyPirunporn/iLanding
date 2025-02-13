@@ -1,15 +1,20 @@
 import { IoIosCheckmark } from "react-icons/io";
 import { FaPhone } from "react-icons/fa6";
-
+import ScrollAnimation from 'react-animate-on-scroll'
 import Image from 'next/image';
 import AboutFoating from "./AboutFoating";
+import { motion } from "framer-motion";
 const About = () => {
     return (
         <section id="about" className="container mx-auto w-full pt-[160px] p-[60px_0]">
             <div className="relative flex flex-col md:flex-row gap-10  items-center justify-between">
-                <div className="flex flex-col w-full xl:w-[40%] gap-5">
-                    <h3 className="text-xl text-accent font-[600]">MORE ABOUT US</h3>
-                    <h2 className="text-2xl  font-[600] text-primary/90">Voluptas enim suscipit temporibus</h2>
+                <ScrollAnimation
+                    animateIn="fadeInUp"
+                    delay={.5}
+                    duration={.5}
+                    className="flex flex-col w-full xl:w-[40%] gap-5">
+                    <h3 className="text-lg text-accent font-bold">MORE ABOUT US</h3>
+                    <h2 className="text-3xl  font-[600] text-primary/90">Voluptas enim suscipit temporibus</h2>
                     <p className="text-md text-primary/80">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-10">
@@ -45,8 +50,23 @@ const About = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="w-full xl:w-[60%] relative h-auto flex flex-col justify-center items-center">
+                </ScrollAnimation>
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        scale: 1.2
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        scale: 1
+                    }}
+                    transition={{
+                        delay: 0.3,
+                        duration: .5,
+                        ease: "easeInOut"
+                    }}
+                    viewport={{ once: false }}
+                    className="w-full xl:w-[60%] relative h-auto flex flex-col justify-center items-center">
                     <div className="relative h-[365px] w-full md:h-[636px] md:left-20">
                         <Image
                             src={"/assets/about-5.webp"}
@@ -66,7 +86,7 @@ const About = () => {
                         </div>
                     </div>
                     <AboutFoating />
-                </div>
+                </motion.div>
             </div>
         </section>
     );

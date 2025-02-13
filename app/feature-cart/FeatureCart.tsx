@@ -11,9 +11,33 @@ const featureCards = [
 ]
 const FeatureCart = () => {
     return (
-        <motion.section id='features-cards' className='container mx-auto p-[60px_0] grid grid-cols-1 md:grid-cols-4 gap-5'>
+        <motion.section
+            id='features-cards' className='container mx-auto p-[60px_0] grid grid-cols-1 md:grid-cols-4 gap-5'>
             {featureCards.map((feature, index) => (
-                <CardFeature key={index} {...feature} index={index} />
+                <motion.div
+                    key={index}
+                    variants={{
+                        initial: {
+                            opacity: 0,
+                            scale: 0
+                        },
+                        animate: {
+                            opacity: 1,
+                            scale: 1
+                        },
+                    }}
+                    viewport={{ once: false }}
+                    initial='initial'
+                    whileInView={"animate"}
+                    transition={{
+                        duration: 1,
+                        each: "easeIn",
+                        delay: index * 0.3,
+
+                    }}
+                >
+                    <CardFeature {...feature} />
+                </motion.div>
             ))}
         </motion.section>
     );

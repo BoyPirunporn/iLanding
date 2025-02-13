@@ -23,7 +23,6 @@ const Foating = () => {
             }}
         >
             <motion.div
-
                 animate={{
                     y: [0, '-20px', 0],
                 }}

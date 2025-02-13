@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import { BsCodeSquare, BsPhone, BsBrowserChrome } from "react-icons/bs";
 
@@ -8,18 +9,44 @@ const listFeature = [
 ]
 const FeatureRight = () => {
     return (
-        <div className='flex flex-col gap-10 items-center'>
+        <motion.div
+            initial={{
+                opacity: 0,
+            }}
+            viewport={{ once: false }}
+            whileInView={{
+                opacity: 1
+            }}
+            transition={{
+                delay: 1
+            }}
+            className='flex flex-col gap-10 items-center'>
             {listFeature.map((feature, index) => (
-                <div key={index} className="flex flex-col md:flex-row gap-10 items-center min-h-[140px]">
+                <motion.div
+                    whileInView={{
+                        opacity: 1,
+                        x: 0,
+                    }}
+                    viewport={{ once: false }}
+                    initial={{
+                        opacity: 0,
+                        x: 100
+                    }}
+                    transition={{
+                        delay: 1 + index * .4,
+                        duration: .5,
+                        ease: "easeIn"
+                    }}
+                    key={index} className="flex flex-col md:flex-row gap-10 items-center min-h-[140px]">
                     {feature.icon}
                     <div className="flex flex-col gap-3 ">
                         <h1 className="text-[20px] text-center md:text-start font-[600]">{feature.title}</h1>
                         <p className="text-[15px] text-primary/80 text-center md:text-start">{feature.description}</p>
                     </div>
 
-                </div>
+                </motion.div>
             ))}
-        </div>
+        </motion.div>
     );
 }
 

@@ -2,7 +2,6 @@ import { motion, Variants } from 'framer-motion';
 import React, { JSX } from 'react';
 
 interface CardFeatureProps {
-    index: number;
     icon: JSX.Element;
     bg: string;
     title: string;
@@ -26,32 +25,13 @@ const variants: Variants = {
 }
 const CardFeature = ({
     icon,
-    index,
     bg: backgroundColor,
     title,
     description
 }: CardFeatureProps) => {
     return (
         <motion.div
-            variants={{
-                initial: {
-                    opacity: 0,
-                    scale: 0
-                },
-                animate: {
-                    opacity: 1,
-                    scale: 1
-                },
-            }}
-            initial='initial'
-            animate={"animate"}
-            transition={{
-                duration: 0.2,
-                each: "easeInOut",
-                delay: index * 0.3,
-                
-            }}
-            className='flex flex-col gap-3 py-9 px-6 rounded-lg'
+            className='flex flex-col gap-3 py-9 px-6 rounded-lg h-full'
             style={{
                 backgroundColor
             }}

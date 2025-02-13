@@ -6,6 +6,7 @@ import 'swiper/css/pagination';
 
 import Image from 'next/image';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { motion } from 'framer-motion';
 const images = [
     "/assets/client-1.png",
     "/assets/client-2.png",
@@ -36,7 +37,23 @@ const Client = () => {
         };
     }, []);
     return (
-        <section id='client' className='container mx-auto p-[60px_0]'>
+        <motion.section
+            initial={{
+                opacity: 0,
+                y: 100
+            }}
+            whileInView={{
+                opacity: 1,
+                y: 0
+            }}
+            viewport={{ once: false }}
+            transition={{
+                ease: "easeIn",
+                duration: .4,
+                delay: .3
+            }}
+
+            id='client' className='container mx-auto p-[60px_0]'>
             <Swiper modules={[Autoplay, Pagination, Navigation]}
                 loop
                 pagination={{
@@ -59,7 +76,7 @@ const Client = () => {
                 ))}
             </Swiper>
 
-        </section>
+        </motion.section>
     );
 }
 

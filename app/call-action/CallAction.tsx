@@ -1,9 +1,26 @@
 import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
 import React from 'react';
 
 const CallAction = () => {
     return (
-        <section id='call-action' className='md:container mx-auto p-[60px_0]'>
+        <motion.section
+            initial={{
+                opacity: 0,
+                y: 100
+            }}
+            whileInView={{
+                opacity: 1,
+                y: 0
+            }}
+            viewport={{once:false}}
+            transition={{
+                ease:"easeIn",
+                duration:.4,
+                delay:.3
+            }}
+
+            id='call-action' className='md:container mx-auto p-[60px_0]'>
             <div className="p-[4rem_2rem] relative rounded-xl bg-accent/90 w-full">
                 <div className=' flex flex-col flex-wrap mt-[calc(-1_*_0)] mr-[calc(-.5_*_1.5rem)] ml-[calc(-.5_*1.5rem)]'>
                     <div className="mx-auto text-center w-full md:w-[66%] ">
@@ -44,7 +61,7 @@ const CallAction = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }
 

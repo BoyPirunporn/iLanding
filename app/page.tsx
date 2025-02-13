@@ -25,7 +25,6 @@ export default function Home() {
       <Feature />
       <FeatureCart />
       <FeatureTwo />
-      {/* TODO:: Call Action animate */}
       <CallAction />
       <Client />
       <Testimonials />

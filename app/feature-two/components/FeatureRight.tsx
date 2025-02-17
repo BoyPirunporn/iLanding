@@ -13,35 +13,35 @@ const FeatureRight = () => {
             initial={{
                 opacity: 0,
             }}
-            viewport={{ once: false }}
             whileInView={{
                 opacity: 1
             }}
+            viewport={{ once: true, amount: .3 }}
             transition={{
-                delay: 1
+                delay: .2
             }}
-            className='flex flex-col gap-10 items-center'>
+            className='flex flex-col gap-10 items-center overflow-hidden'>
             {listFeature.map((feature, index) => (
                 <motion.div
                     whileInView={{
                         opacity: 1,
                         x: 0,
                     }}
-                    viewport={{ once: false }}
+                    viewport={{ once: true, amount: .3 }}
                     initial={{
                         opacity: 0,
                         x: 100
                     }}
                     transition={{
-                        delay: 1 + index * .4,
+                        delay: .2 + index * .2,
                         duration: .5,
                         ease: "easeIn"
                     }}
-                    key={index} className="flex flex-col md:flex-row gap-10 items-center min-h-[140px]">
+                    key={index} className="flex flex-col xl:flex-row gap-10 items-center min-h-[140px]">
                     {feature.icon}
                     <div className="flex flex-col gap-3 ">
-                        <h1 className="text-[20px] text-center md:text-start font-[600]">{feature.title}</h1>
-                        <p className="text-[15px] text-primary/80 text-center md:text-start">{feature.description}</p>
+                        <h1 className="text-[20px] text-center xl:text-start font-[600]">{feature.title}</h1>
+                        <p className="text-[15px] text-primary/80 text-center xl:text-start">{feature.description}</p>
                     </div>
 
                 </motion.div>

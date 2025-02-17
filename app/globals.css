@@ -21,16 +21,16 @@
   }
 
   .shape-1 {
-    @apply w-[200px] h-[200px] md:w-[250px] md:h-[250px] absolute top-[-20px] right-[20px] md:right-[-20px] opacity-[.1] transform rotate-45  animate-shaps-float
+    @apply w-[200px] h-[200px] xl:w-[250px] xl:h-[250px] absolute top-[-20px] right-[40px] xl:right-[-20px] opacity-[.1] transform rotate-45  animate-shaps-float
   }
   .shape-2 {
-    @apply w-[150px] h-[150px] md:w-[200px] md:h-[200px] bottom-[-30px] left-[50px] opacity-[.15] transform rotate-15 animate-shaps-float absolute
+    @apply w-[150px] h-[150px] xl:w-[200px] xl:h-[200px] bottom-[-30px] left-[50px] opacity-[.15] transform rotate-15 animate-shaps-float absolute
   }
   .shape-3{
-    @apply w-[100px] h-[100px] md:w-[150px] md:h-[150px] top-[20%] right-[15%] opacity-[.08] transform rotate-15 absolute
+    @apply w-[100px] h-[100px] xl:w-[150px] xl:h-[150px] top-[20%] right-[15%] opacity-[.08] transform rotate-15 absolute
   }
   .dot-1{
-    @apply w-[100px] h-[100px] md:w-[200px] md:h-[200px] top-[50px] left-[10%] opacity-[.1] transform rotate-15 animate-shaps-float absolute
+    @apply w-[100px] h-[100px] xl:w-[200px] xl:h-[200px] top-[50px] left-[10%] opacity-[.1] transform rotate-15 animate-shaps-float absolute
   }
   .dot-2{
     @apply absolute w-[150px] h-[150px] bottom-[20px] right-[15%] opacity-[.15] transform -rotate-10 animate-shaps-float

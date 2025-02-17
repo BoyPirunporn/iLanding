@@ -2,47 +2,47 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Modisit from "./components/Modisit";
 import Praesenti from "./components/Praesenti";
 import Explica from "./components/Explica";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
+const variants: Variants = {
+    initial: {
+        opacity: 0,
+        y: 80
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+    }
+}
 const Feature = () => {
     return (
         <motion.section
 
-            id="feature" className="container mx-auto p-[60px_0]">
+            id="feature" className="container mx-auto py-[60px]">
             <motion.div
-                viewport={{ once: false }}
-                initial={{
-                    opacity: 0,
-                    y: 80
-                }}
-                whileInView={{
-                    opacity: 1,
-                    y: 0
-                }}
+                variants={variants}
+                initial={"initial"}
+                whileInView={"visible"}
+                viewport={{ once: true, amount: .5 }}
                 transition={{
-                    delay: .2,
-                    duration: .4,
+                    delay: .3,
+                    duration: .5,
                     ease: "easeIn"
                 }}
             >
                 <h1 className="text-center mb-[20px] pb-[20px] relative text-4xl font-[700] text-primary/80 after:content-[''] after:absolute after:block after:w-[50px] after:h-[3px] after:bg-accent after:left-0 after:right-0 after:bottom-0 after:m-auto"> Feature </h1>
                 <p className="text-md text-primary/80 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit recusandae officia facere numquam placeat distinctio?</p>
-                <div className="mb-28"></div>
+                <div className="mb-10"></div>
             </motion.div>
             <Tabs defaultValue="modisit">
                 <motion.div
-                    viewport={{ once: false }}
-                    initial={{
-                        opacity: 0,
-                        y: 80
-                    }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0
-                    }}
+                    variants={variants}
+                    initial={"initial"}
+                    whileInView={"visible"}
+                    viewport={{ once: true, amount: .5 }}
                     transition={{
-                        delay: .4,
-                        duration: .4,
+                        delay: .3,
+                        duration: .5,
                         ease: "easeIn"
                     }}
                 >
@@ -54,15 +54,10 @@ const Feature = () => {
                 </motion.div>
 
                 <motion.div
-                    viewport={{ once: false }}
-                    initial={{
-                        opacity: 0,
-                        y: 80
-                    }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0
-                    }}
+                    variants={variants}
+                    initial={"initial"}
+                    viewport={{ once: true, amount: .5 }}
+                    whileInView={"visible"}
                     transition={{
                         delay: .6,
                         duration: .4,

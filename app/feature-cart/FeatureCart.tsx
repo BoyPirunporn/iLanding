@@ -12,7 +12,7 @@ const featureCards = [
 const FeatureCart = () => {
     return (
         <motion.section
-            id='features-cards' className='container mx-auto p-[60px_0] grid grid-cols-1 md:grid-cols-4 gap-5'>
+            id='features-cards' className='container mx-auto py-[60px] grid grid-cols-1 xl:grid-cols-4 gap-5'>
             {featureCards.map((feature, index) => (
                 <motion.div
                     key={index}
@@ -26,11 +26,11 @@ const FeatureCart = () => {
                             scale: 1
                         },
                     }}
-                    viewport={{ once: false }}
                     initial='initial'
                     whileInView={"animate"}
+                    viewport={{ once: true, }}
                     transition={{
-                        duration: 1,
+                        duration: .5,
                         each: "easeIn",
                         delay: index * 0.3,
 

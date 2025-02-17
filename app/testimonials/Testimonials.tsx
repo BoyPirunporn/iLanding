@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image'
 import Star from './components/Star';
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { motion } from 'framer-motion';
+import TestimonialItem from './components/TestimonialItem';
 
 const testimonials = [
     { name: "Saul Goodman", avatar: "/assets/testimonials/testimonials-1.jpg", position: "Ceo & Founder", rating: 5, message: "Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper." },
@@ -12,37 +14,54 @@ const testimonials = [
 
 const Testimonials = () => {
     return (
-        <section id="testimonials" className='container mx-auto p-[60px_0]'>
-            <h1 className="title-section">
-                Testimonials
-            </h1>
-            <p className="desc-section">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit recusandae officia facere numquam placeat distinctio?</p>
+        <motion.section
+            id="testimonials" className='container mx-auto py-[60px]'>
+            <motion.div
+                initial={{
+                    opacity: 0,
+                    y: 100
+                }}
+                whileInView={{
+                    opacity: 1,
+                    y: 0
+                }}
+                viewport={{ once: true, }}
+                transition={{
+                    ease: "easeIn",
+                    duration: .8,
+                }}
+                className="">
+                <h1 className="title-section">
+                    Testimonials
+                </h1>
+                <p className="desc-section">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit recusandae officia facere numquam placeat distinctio?</p>
+            </motion.div>
 
-            <div className="p-[60px_0]">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div className="py-[60px]">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
                     {testimonials.map((item, index) => (
-                        <div key={index} className="flex flex-col gap-4">
-                            <div className='flex flex-row gap-2'>
-                                <div className="h-[90px] w-[90px] relative">
-                                    <Image src={item.avatar} fill className='object-cover rounded-full' alt={''}
-                                    />
-                                </div>
-                                <div className="flex flex-col">
-                                    <h1 className='text-md font-bold'>{item.name}</h1>
-                                    <span className='text-sm text-primary/80 mb-3'>{item.position}</span>
-                                    <Star rating={item.rating} />
-                                </div>
-                            </div>
-                            <p className="italic m-[15px_0_0_0] p-0">
-                                <FaQuoteLeft className='i-quote right-[10px]' size={18} />
-                                <span>{item.message}</span>
-                                <FaQuoteRight className='i-quote right-[-10px]' size={18} />
-                            </p>
-                        </div>
+                        <motion.div key={index}
+                            initial={{
+                                opacity: 0,
+                                y: 100
+                            }}
+                            whileInView={{
+                                opacity: 1,
+                                y: 0
+                            }}
+                            viewport={{ once: true, amount: .5 }}
+                            transition={{
+                                ease: "easeIn",
+                                duration: .8,
+                                delay: index * .2
+                            }}
+                        >
+                            <TestimonialItem  {...item} />
+                        </motion.div>
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }
 

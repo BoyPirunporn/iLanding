@@ -46,14 +46,14 @@ const Client = () => {
                 opacity: 1,
                 y: 0
             }}
-            viewport={{ once: false }}
+            viewport={{ once: true,amount:.5 }}
             transition={{
                 ease: "easeIn",
                 duration: .4,
                 delay: .3
             }}
 
-            id='client' className='container mx-auto p-[60px_0]'>
+            id='client' className='container mx-auto py-[60px]'>
             <Swiper modules={[Autoplay, Pagination, Navigation]}
                 loop
                 pagination={{

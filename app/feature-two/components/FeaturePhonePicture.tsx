@@ -13,7 +13,7 @@ const FeaturePhonePicture = () => {
                     opacity: 1,
                     y: 0
                 }}
-                viewport={{ once: false }}
+                viewport={{ once: true,  }}
                 transition={{
                     ease: "easeIn",
                     duration: .5

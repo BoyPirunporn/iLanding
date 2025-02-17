@@ -11,7 +11,7 @@ const stats = [
 ];
 const Stat = () => {
     return (
-        <div className="grid  grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="grid  grid-cols-1 md:grid-cols-4 gap-10 pb-10">
             {stats.map((stat, index) => <StatItem key={index} {...stat} />)}
         </div>
     );

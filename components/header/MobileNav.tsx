@@ -24,7 +24,7 @@ const MobileNav = ({
                 className="fixed top-0 left-0 bottom-0 w-full bg-white ">
                 <div className="flex flex-col h-full  items-center justify-center gap-5 text-3xl">
                     {links.map((link, index) => (
-                        <LinkReactScroll to={link.id} smooth duration={300} onClick={onClick} spy activeClass='text-accent' key={index}>{link.title}</LinkReactScroll>
+                        <LinkReactScroll to={link.id} smooth duration={300} offset={-80} onClick={onClick} spy activeClass='text-accent' className='text-lg' key={index}>{link.title}</LinkReactScroll>
                     ))}
                 </div>
             </motion.div>

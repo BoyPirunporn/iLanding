@@ -1,4 +1,4 @@
-import { motion, Variants } from 'framer-motion';
+import {  Variants } from 'framer-motion';
 import React, { JSX } from 'react';
 
 interface CardFeatureProps {
@@ -30,7 +30,7 @@ const CardFeature = ({
     description
 }: CardFeatureProps) => {
     return (
-        <motion.div
+        <div
             className='flex flex-col gap-3 py-9 px-6 rounded-lg h-full'
             style={{
                 backgroundColor
@@ -39,7 +39,7 @@ const CardFeature = ({
             {icon}
             <h3 className="text-lg font-bold">{title}</h3>
             <p className='text-md text-primary/90'>{description}</p>
-        </motion.div>
+        </div>
     );
 }
 

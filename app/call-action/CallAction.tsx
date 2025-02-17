@@ -9,19 +9,18 @@ const CallAction = () => {
                 opacity: 0,
                 y: 100
             }}
+            viewport={{once:true}}
             whileInView={{
                 opacity: 1,
                 y: 0
             }}
-            viewport={{once:false}}
             transition={{
-                ease:"easeIn",
-                duration:.4,
-                delay:.3
+                ease: "easeIn",
+                duration: .5,
+                delay: .4
             }}
-
-            id='call-action' className='md:container mx-auto p-[60px_0]'>
-            <div className="p-[4rem_2rem] relative rounded-xl bg-accent/90 w-full">
+            id='call-action' className='xl:container mx-auto py-[60px]'>
+            <div className="p-[4rem_2rem] relative xl:rounded-xl bg-accent/90 w-full">
                 <div className=' flex flex-col flex-wrap mt-[calc(-1_*_0)] mr-[calc(-.5_*_1.5rem)] ml-[calc(-.5_*1.5rem)]'>
                     <div className="mx-auto text-center w-full md:w-[66%] ">
                         <h1 className='text-5xl text-white font-[600] mb-10'>Maecenas tempus tellus eget condimentum</h1>

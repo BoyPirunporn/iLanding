@@ -9,7 +9,22 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "15px",
+      padding: {
+        DEFAULT: "1rem", // ค่าเริ่มต้น (16px)
+        xs: "1.5rem",
+        sm: "2rem",      // 32px เมื่อหน้าจอเล็ก
+        md: "3rem",      // 48px เมื่อหน้าจอกลาง
+        lg: "4rem",      // 64px เมื่อหน้าจอใหญ่
+        xl: "5rem",      // 80px เมื่อจอใหญ่มาก
+      },
+      screens: {
+        xs: "374px",
+        sm: "540px",
+        md: "720px",
+        lg: "960px",
+        xl: "1140px",
+        '2xl': '1320px',
+      }
     },
     screens: {
       xs: "374px",
@@ -24,7 +39,7 @@ export default {
         'checkmark': "\f26a"
       },
       fontFamily: {
-        nunito:["'Nunito Sans'","sans-serif"],
+        nunito: ["'Nunito Sans'", "sans-serif"],
         primary: "var(--font-nunito), sans-serif"
       },
       colors: {

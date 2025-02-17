@@ -58,8 +58,8 @@ const Footer = () => {
         <div className='container'>
 
             <div className="pt-[50px]">
-                <div className=" grid grid-cols-1 md:grid-cols-6 relative">
-                    <div className="col-span-2">
+                <div className=" grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 relative gap-20 ">
+                    <div className="lg:col-span-2 ">
                         <Link href={"#home"} className='text-primary text-2xl font-[600] mb-10'>iLanding</Link>
                         <div className='mt-10'>
                             <p className="text-sm mb-1">A108 Adam Street</p>
@@ -75,13 +75,12 @@ const Footer = () => {
                             ))}
                         </ul>
                     </div>
-                    
                     {contacts.map((item,index) => (
                         <div key={index}>
-                            <h3 className='text-xl font-bold text-primary'>{item.title}</h3>
+                            <h3 className='text-[16px] font-bold text-primary'>{item.title}</h3>
                             <ul className="flex flex-col gap-4 mt-3">
                                 {item.items.map((d,i) => (
-                                    <li key={i} className='text-md text-primary/80'>{d}</li>
+                                    <li key={i} className='text-sm text-primary/80'>{d}</li>
                                 ))}
                             </ul>
                         </div>
@@ -90,8 +89,7 @@ const Footer = () => {
             </div>
             <div className="container p-[25px_0] border-t-[1px_solid_color-mix(in_srgb,_#212529,_transparent_90%)] text-center mt-10">
                 <p className="text-sm">
-                    ©
-                    <span>Copyright</span>
+                    © <span>Copyright</span>
                     <strong className="px-1 sitename">iLanding</strong>
                     <span>All Rights Reserved</span>
                 </p>

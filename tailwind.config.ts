@@ -35,6 +35,7 @@ export default {
       '2xl': '1400px',
     },
     extend: {
+      
       content: {
         'checkmark': "\f26a"
       },
@@ -63,6 +64,9 @@ export default {
       },
       animation: {
         'shaps-float': "shaps-float 3s infinite ease-in-out"
+      },
+      backgroundImage:{
+        'custom-grandient':'linear-gradient(180deg,#fde1ff,#e1ffea22 60%)'
       }
     },
   },

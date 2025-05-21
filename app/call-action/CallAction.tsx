@@ -3,12 +3,13 @@ import { motion } from 'framer-motion';
 import React from 'react';
 
 const CallAction = () => {
-    return (
-        <motion.section
-            initial={{
+    let initial = {
                 opacity: 0,
                 y: 100
-            }}
+            }
+    return (
+        <motion.section
+            initial={initial}
             viewport={{once:true}}
             whileInView={{
                 opacity: 1,
